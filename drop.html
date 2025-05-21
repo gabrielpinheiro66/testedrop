@@ -1,0 +1,626 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Migre do Mercado Livre para Seu Próprio Site</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Rajdhani:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --neon-blue: #FFE600;
+            --neon-purple: #FFFFFF;
+            --neon-cyan: #FFFFFF;
+            --dark-bg: #0a0a1a;
+        }
+        
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background-color: var(--dark-bg);
+            color: white;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4, .neon-font {
+            font-family: 'Orbitron', sans-serif;
+        }
+        
+        .neon-text-blue {
+            text-shadow: 0 0 5px #00b3ff, 0 0 10px #00b3ff, 0 0 15px #00b3ff;
+            color: var(--neon-blue);
+        }
+        
+        .neon-text-purple {
+            text-shadow: 0 0 5px #b300ff, 0 0 10px #b300ff, 0 0 15px #b300ff;
+            color: var(--neon-purple);
+        }
+        
+        .neon-text-cyan {
+            text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 15px #00ffcc;
+            color: var(--neon-cyan);
+        }
+        
+        .neon-border-blue {
+            box-shadow: 0 0 10px var(--neon-blue), inset 0 0 10px var(--neon-blue);
+            border: 1px solid var(--neon-blue);
+        }
+        
+        .neon-border-purple {
+            box-shadow: 0 0 10px var(--neon-purple), inset 0 0 10px var(--neon-purple);
+            border: 1px solid var(--neon-purple);
+        }
+        
+        .neon-border-cyan {
+            box-shadow: 0 0 10px var(--neon-cyan), inset 0 0 10px var(--neon-cyan);
+            border: 1px solid var(--neon-cyan);
+        }
+        
+        .neon-button {
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .neon-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 0 20px;
+        }
+        
+        .neon-button::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(
+                to bottom right,
+                rgba(0, 247, 255, 0),
+                rgba(0, 247, 255, 0.3),
+                rgba(0, 247, 255, 0)
+            );
+            transform: rotate(45deg);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { left: -50%; top: -50%; }
+            100% { left: 150%; top: 150%; }
+        }
+        
+        .digital-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--neon-blue), var(--neon-purple), transparent);
+            position: relative;
+        }
+        
+        .digital-divider::after {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            top: 4px;
+        }
+        
+        .device-mockup {
+            position: relative;
+            border-radius: 10px;
+            overflow: hidden;
+            transform-style: preserve-3d;
+            transform: perspective(1000px) rotateX(5deg) rotateY(-10deg);
+            transition: all 0.5s ease;
+        }
+        
+        .device-mockup:hover {
+            transform: perspective(1000px) rotateX(0deg) rotateY(0deg);
+        }
+        
+        .device-mockup::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(0,247,255,0.1) 0%, rgba(179,0,255,0.1) 100%);
+            z-index: 2;
+        }
+        
+        .timeline-item {
+            position: relative;
+            padding-left: 50px;
+        }
+        
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            left: 15px;
+            top: 0;
+            height: 100%;
+            width: 2px;
+            background: linear-gradient(to bottom, var(--neon-purple), var(--neon-cyan));
+        }
+        
+        .timeline-dot {
+            position: absolute;
+            left: 10px;
+            top: 5px;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: var(--neon-cyan);
+            box-shadow: 0 0 10px var(--neon-cyan);
+        }
+        
+        .pricing-card {
+            transition: all 0.3s ease;
+            transform-style: preserve-3d;
+            transform: perspective(1000px) rotateY(0deg);
+        }
+        
+        .pricing-card:hover {
+            transform: perspective(1000px) rotateY(5deg);
+        }
+        
+        .glow-effect {
+            animation: glow-pulse 4s infinite alternate;
+        }
+        
+        @keyframes glow-pulse {
+            0% { box-shadow: 0 0 10px var(--neon-blue); }
+            50% { box-shadow: 0 0 20px var(--neon-purple); }
+            100% { box-shadow: 0 0 15px var(--neon-cyan); }
+        }
+        
+        .grid-pattern {
+            background: 
+                linear-gradient(rgba(0, 247, 255, 0.05) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0, 247, 255, 0.05) 1px, transparent 1px);
+            background-size: 20px 20px;
+        }
+    </style>
+</head>
+<body class="grid-pattern">
+    <!-- Header -->
+    <header class="py-6">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="flex justify-between items-center">
+                <div class="text-2xl font-bold neon-text-blue">
+                    <span class="neon-text-purple">WEB</span>FUTURE
+                </div>
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#beneficios" class="text-white hover:text-cyan-300 transition">Benefícios</a>
+                    <a href="#migracao" class="text-white hover:text-purple-300 transition">Migração</a>
+                    <a href="#planos" class="text-white hover:text-blue-300 transition">Planos</a>
+                    <a href="#contato" class="text-white hover:text-cyan-300 transition">Contato</a>
+                </nav>
+                <button class="md:hidden text-white">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="py-20 relative overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <div class="absolute top-0 left-0 w-full h-full opacity-20" style="background: radial-gradient(circle at center, var(--neon-blue) 0%, transparent 70%);"></div>
+            <div class="absolute top-0 left-0 w-full h-full opacity-15" style="background: radial-gradient(circle at 30% 70%, var(--neon-purple) 0%, transparent 70%);"></div>
+        </div>
+        <div class="container mx-auto px-4 max-w-6xl relative z-10">
+            <div class="flex flex-col lg:flex-row items-center">
+                <div class="lg:w-1/2 mb-12 lg:mb-0 text-center lg:text-left">
+                    <h1 class="text-4xl md:text-6xl font-bold mb-6 neon-text-purple">
+                        PARE DE DEPENDER DO <span class="neon-text-blue">MERCADO LIVRE</span>
+                    </h1>
+                    <p class="text-xl mb-8 text-gray-300">
+                        Tenha seu próprio site profissional em 24 horas, sem mensalidades abusivas e com toda a liberdade para vender como quiser!
+                    </p>
+                    <div class="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
+                        <button class="neon-button bg-gradient-to-r from-purple-600 to-blue-500 text-white py-4 px-8 rounded-full font-bold text-lg neon-border-purple">
+                            QUERO MEU SITE AGORA
+                        </button>
+                        <button class="neon-button bg-transparent text-white py-4 px-8 rounded-full font-bold text-lg border border-white hover:border-cyan-300 hover:text-cyan-300">
+                            <i class="fas fa-play mr-2"></i> VER VÍDEO
+                        </button>
+                    </div>
+                </div>
+                <div class="lg:w-1/2 relative">
+                    <div class="device-mockup neon-border-blue" style="max-width: 600px;">
+                        <img src="https://images.unsplash.com/photo-1551650975-87deedd944c3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1074&q=80" alt="Dashboard de e-commerce" class="w-full h-auto">
+                    </div>
+                    <div class="absolute -bottom-10 -left-10 z-10 hidden lg:block">
+                        <div class="device-mockup neon-border-cyan" style="width: 150px;">
+                            <img src="https://images.unsplash.com/photo-1592899677977-9c10df588f62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1632&q=80" alt="Mobile e-commerce" class="w-full h-auto">
+                        </div>
+                    </div>
+                    <div class="absolute -top-10 -right-10 z-10 hidden lg:block">
+                        <div class="device-mockup neon-border-purple" style="width: 200px;">
+                            <img src="https://images.unsplash.com/photo-1491933382434-500287f9b54b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D3D&auto=format&fit=crop&w=1064&q=80" alt="Tablet e-commerce" class="w-full h-auto">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Divider -->
+    <div class="digital-divider my-16"></div>
+
+    <!-- Benefits Section -->
+    <section id="beneficios" class="py-16">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center neon-text-cyan">
+                POR QUE TER SEU PRÓPRIO SITE?
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <!-- Benefit 1 -->
+                <div class="bg-gray-900 bg-opacity-50 p-8 rounded-xl neon-border-blue hover:neon-border-purple transition-all duration-300">
+                    <div class="text-4xl mb-4 neon-text-blue">
+                        <i class="fas fa-percentage"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Sem taxas abusivas</h3>
+                    <p class="text-gray-300">
+                        No Mercado Livre você paga até 16% por venda. Com seu site, você paga apenas uma pequena taxa fixa.
+                    </p>
+                </div>
+                
+                <!-- Benefit 2 -->
+                <div class="bg-gray-900 bg-opacity-50 p-8 rounded-xl neon-border-purple hover:neon-border-cyan transition-all duration-300">
+                    <div class="text-4xl mb-4 neon-text-purple">
+                        <i class="fas fa-user-tie"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Sua própria marca</h3>
+                    <p class="text-gray-300">
+                        Destaque sua marca e não fique escondido atrás do Mercado Livre. Crie identidade com seus clientes.
+                    </p>
+                </div>
+                
+                <!-- Benefit 3 -->
+                <div class="bg-gray-900 bg-opacity-50 p-8 rounded-xl neon-border-cyan hover:neon-border-blue transition-all duration-300">
+                    <div class="text-4xl mb-4 neon-text-cyan">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Controle total</h3>
+                    <p class="text-gray-300">
+                        Acesse dados completos de vendas, clientes e estoque. Tome decisões baseadas em dados reais.
+                    </p>
+                </div>
+                
+                <!-- Benefit 4 -->
+                <div class="bg-gray-900 bg-opacity-50 p-8 rounded-xl neon-border-blue hover:neon-border-purple transition-all duration-300">
+                    <div class="text-4xl mb-4 neon-text-blue">
+                        <i class="fas fa-lock"></i>
+                    </div>
+                    <h3 class="text-xl font-bold mb-3">Segurança</h3>
+                    <p class="text-gray-300">
+                        Seu site com certificado SSL, pagamentos seguros e proteção contra fraudes. Tudo configurado por nós.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Divider -->
+    <div class="digital-divider my-16"></div>
+
+    <!-- Migration Timeline -->
+<section id="migracao" class="py-16">
+    <div class="container mx-auto px-4 max-w-6xl">
+        <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center neon-text-purple">
+            SUA <span class="neon-text-blue">MIGRAÇÃO</span> EM 4 PASSOS
+        </h2>
+        
+        <div class="relative">
+            <!-- Timeline line -->
+            <div class="hidden lg:block absolute left-1/2 top-0 h-full w-1 bg-gradient-to-b from-purple-500 to-cyan-500 transform -translate-x-1/2"></div>
+            
+            <!-- Timeline items -->
+            <div class="grid grid-cols-1 lg:grid-cols-8 gap-y-8">
+                <!-- Item 1 -->
+                <div class="lg:col-span-3 lg:pr-8 lg:text-right">
+                    <div class="relative bg-gray-900 bg-opacity-50 p-6 rounded-lg border border-gray-700">
+                        <div class="hidden lg:block absolute -right-2 top-1/2 transform -translate-y-1/2 w-4 h-4 rounded-full bg-cyan-400 shadow-lg shadow-cyan-400/50"></div>
+                        <h3 class="text-2xl font-bold mb-2 neon-text-blue">1. Cadastro e Briefing</h3>
+                        <p class="text-gray-300">
+                            Você nos conta sobre seu negócio, produtos e preferências de design em um simples formulário.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Spacer -->
+                <div class="hidden lg:block lg:col-span-2"></div>
+                
+                <!-- Item 2 -->
+                <div class="lg:col-span-3 lg:col-start-6 lg:pl-8">
+                    <div class="relative bg-gray-900 bg-opacity-50 p-6 rounded-lg border border-gray-700">
+                        <div class="hidden lg:block absolute -left-2 top-1/2 transform -translate-y-1/2 w-4 h-4 rounded-full bg-purple-400 shadow-lg shadow-purple-400/50"></div>
+                        <h3 class="text-2xl font-bold mb-2 neon-text-purple">2. Desenvolvimento</h3>
+                        <p class="text-gray-300">
+                            Nossa equipe cria seu site personalizado em até 24 horas, com design profissional e todas as funcionalidades.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Item 3 -->
+                <div class="lg:col-span-3 lg:pr-8 lg:text-right">
+                    <div class="relative bg-gray-900 bg-opacity-50 p-6 rounded-lg border border-gray-700">
+                        <div class="hidden lg:block absolute -right-2 top-1/2 transform -translate-y-1/2 w-4 h-4 rounded-full bg-cyan-400 shadow-lg shadow-cyan-400/50"></div>
+                        <h3 class="text-2xl font-bold mb-2 neon-text-cyan">3. Treinamento</h3>
+                        <p class="text-gray-300">
+                            Você recebe um treinamento completo (vídeo + live) para gerenciar seu site como um expert.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Spacer -->
+                <div class="hidden lg:block lg:col-span-2"></div>
+                
+                <!-- Item 4 -->
+                <div class="lg:col-span-3 lg:col-start-6 lg:pl-8">
+                    <div class="relative bg-gray-900 bg-opacity-50 p-6 rounded-lg border border-gray-700">
+                        <div class="hidden lg:block absolute -left-2 top-1/2 transform -translate-y-1/2 w-4 h-4 rounded-full bg-blue-400 shadow-lg shadow-blue-400/50"></div>
+                        <h3 class="text-2xl font-bold mb-2 neon-text-blue">4. Lançamento</h3>
+                        <p class="text-gray-300">
+                            Seu site vai ao ar com domínio próprio, e-commerce completo e integração com os principais meios de pagamento.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="mt-16 text-center">
+            <button class="neon-button bg-gradient-to-r from-blue-500 to-cyan-500 text-white py-4 px-8 rounded-full font-bold text-lg neon-border-blue hover:shadow-lg hover:shadow-blue-500/50 transition-all duration-300">
+                QUERO INICIAR MINHA MIGRAÇÃO
+            </button>
+        </div>
+    </div>
+</section>
+
+    <!-- Digital Divider -->
+    <div class="digital-divider my-16"></div>
+
+    <!-- Pricing Section -->
+    <section id="planos" class="py-16">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-4 text-center neon-text-cyan">
+                NOSSOS <span class="neon-text-purple">PLANOS</span>
+            </h2>
+            <p class="text-xl text-center mb-16 text-gray-300 max-w-2xl mx-auto">
+                Escolha o plano ideal para seu negócio. Todos incluem domínio, hospedagem, e-commerce completo e suporte.
+            </p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Plano Básico -->
+                <div class="pricing-card bg-gray-900 bg-opacity-50 p-8 rounded-xl neon-border-blue">
+                    <h3 class="text-2xl font-bold mb-4 neon-text-blue">BÁSICO</h3>
+                    <div class="text-5xl font-bold mb-6 neon-text-blue">
+                        R$ 997
+                    </div>
+                    <div class="text-gray-300 mb-6">
+                        <p class="mb-2"><i class="fas fa-check-circle text-green-400 mr-2"></i> Site com até 50 produtos</p>
+                        <p class="mb-2"><i class="fas fa-check-circle text-green-400 mr-2"></i> Design responsivo</p>
+                        <p class="mb-2"><i class="fas fa-check-circle text-green-400 mr-2"></i> Integração com PagSeguro</p>
+                        <p class="mb-2"><i class="fas fa-check-circle text-green-400 mr-2"></i> Domínio .com.br por 1 ano</p>
+                        <p class="mb-2"><i class="fas fa-check-circle text-green-400 mr-2"></i> Hospedagem por 12 meses</p>
+                    </div>
+                    <button class="w-full neon-button bg-blue-600 text-white py-3 px-6 rounded-full font-bold neon-border-blue">
+                        ESCOLHER ESTE
+                    </button>
+                </div>
+                
+                <!-- Plano Popular (Destaque) -->
+                <div class="pricing-card bg-gray-900 p-8 rounded-xl neon-border-purple relative glow-effect" style="transform: scale(1.05);">
+                    <div class="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-purple-600 text-white px-4 py-1 rounded-full text-sm font-bold">
+                        MAIS POPULAR
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4 neon-text-purple">PROFISSIONAL</h3>
+                    <div class="text-5xl font-bold mb-6 neon-text-purple">
+                        R$ 1.497
+                    </div>
+                    <div class="text-gray-300 mb-6">
+                        <p class="mb-2"><i class="fas fa-check-circle text-green-400 mr-2"></i> Site com até 200 produtos</p>
+                        <p class="mb-2"><i class="fas fa-check-circle text-green-400 mr-2"></i> Design personalizado</p>
+                        <p class="mb-2"><i class="fas fa-check-circle text-green-400 mr-2"></i> Integração PagSeguro + Pix</p>
+                        <p class="mb-2"><i class="fas fa-check-circle text-green-400 mr-2"></i> Domínio .com.br por 1 ano</p>
+                        <p class="mb-2"><i class="fas fa-check-circle text-green-400 mr-2"></i> Hospedagem por 24 meses</p>
+                        <p class="mb-2"><i class="fas fa-check-circle text-green-400 mr-2"></i> SEO básico incluído</p>
+                    </div>
+                    <button class="w-full neon-button bg-gradient-to-r from-purple-600 to-blue-500 text-white py-3 px-6 rounded-full font-bold neon-border-purple">
+                        ESCOLHER ESTE
+                    </button>
+                </div>
+                
+                <!-- Plano Premium -->
+                <div class="pricing-card bg-gray-900 bg-opacity-50 p-8 rounded-xl neon-border-cyan">
+                    <h3 class="text-2xl font-bold mb-4 neon-text-cyan">PREMIUM</h3>
+                    <div class="text-5xl font-bold mb-6 neon-text-cyan">
+                        R$ 2.497
+                    </div>
+                    <div class="text-gray-300 mb-6">
+                        <p class="mb-2"><i class="fas fa-check-circle text-green-400 mr-2"></i> Site com produtos ilimitados</p>
+                        <p class="mb-2"><i class="fas fa-check-circle text-green-400 mr-2"></i> Design exclusivo</p>
+                        <p class="mb-2"><i class="fas fa-check-circle text-green-400 mr-2"></i> Multi-gateways de pagamento</p>
+                        <p class="mb-2"><i class="fas fa-check-circle text-green-400 mr-2"></i> Domínio .com.br por 2 anos</p>
+                        <p class="mb-2"><i class="fas fa-check-circle text-green-400 mr-2"></i> Hospedagem premium 36 meses</p>
+                        <p class="mb-2"><i class="fas fa-check-circle text-green-400 mr-2"></i> SEO avançado + Google Ads $100</p>
+                    </div>
+                    <button class="w-full neon-button bg-cyan-600 text-white py-3 px-6 rounded-full font-bold neon-border-cyan">
+                        ESCOLHER ESTE
+                    </button>
+                </div>
+            </div>
+            
+            <div class="mt-12 text-center text-gray-400">
+                <p>Pagamento único. Sem taxas escondidas. Sem mensalidades abusivas.</p>
+                <p class="mt-2">Precisa de um plano personalizado? <a href="#contato" class="text-cyan-300 hover:underline">Fale conosco</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Digital Divider -->
+    <div class="digital-divider my-16"></div>
+
+    <!-- FAQ Section -->
+    <section class="py-16">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <h2 class="text-3xl md:text-4xl font-bold mb-16 text-center neon-text-purple">
+                PERGUNTAS <span class="neon-text-blue">FREQUENTES</span>
+            </h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- FAQ Item 1 -->
+                <div class="bg-gray-900 bg-opacity-50 p-6 rounded-lg neon-border-blue">
+                    <h3 class="text-xl font-bold mb-3 neon-text-blue">
+                        <i class="fas fa-question-circle mr-2"></i> Quanto tempo leva para ter meu site pronto?
+                    </h3>
+                    <p class="text-gray-300">
+                        Nosso prazo padrão é de 24 horas após a aprovação do briefing. Casos mais complexos podem levar até 48 horas.
+                    </p>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="bg-gray-900 bg-opacity-50 p-6 rounded-lg neon-border-purple">
+                    <h3 class="text-xl font-bold mb-3 neon-text-purple">
+                        <i class="fas fa-question-circle mr-2"></i> Posso migrar meus clientes do Mercado Livre?
+                    </h3>
+                    <p class="text-gray-300">
+                        Sim! Nós ajudamos a exportar seus clientes e histórico de vendas para seu novo site, mantendo sua base de dados.
+                    </p>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="bg-gray-900 bg-opacity-50 p-6 rounded-lg neon-border-cyan">
+                    <h3 class="text-xl font-bold mb-3 neon-text-cyan">
+                        <i class="fas fa-question-circle mr-2"></i> E se eu não souber administrar o site?
+                    </h3>
+                    <p class="text-gray-300">
+                        Oferecemos treinamento completo e suporte por 30 dias gratuitos. Além disso, o painel é extremamente intuitivo.
+                    </p>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="bg-gray-900 bg-opacity-50 p-6 rounded-lg neon-border-blue">
+                    <h3 class="text-xl font-bold mb-3 neon-text-blue">
+                        <i class="fas fa-question-circle mr-2"></i> Como faço para receber os pagamentos?
+                    </h3>
+                    <p class="text-gray-300">
+                        Seu site já vem integrado com os principais gateways (PagSeguro, Mercado Pago, Pix). Você recebe direto na sua conta.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-r from-blue-900 to-purple-900 bg-opacity-50">
+        <div class="container mx-auto px-4 max-w-6xl text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6 neon-text-cyan">
+                PRONTO PARA TER SEU PRÓPRIO SITE?
+            </h2>
+            <p class="text-xl mb-8 text-gray-300 max-w-2xl mx-auto">
+                Não perca mais vendas para o Mercado Livre. Tenha liberdade, controle e lucros maiores com seu próprio e-commerce.
+            </p>
+            <button class="neon-button bg-gradient-to-r from-purple-600 to-cyan-500 text-white py-4 px-12 rounded-full font-bold text-xl neon-border-purple">
+                <i class="fas fa-rocket mr-2"></i> QUERO MEU SITE AGORA
+            </button>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contato" class="pt-16 pb-8">
+        <div class="container mx-auto px-4 max-w-6xl">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+                <!-- Logo and info -->
+                <div>
+                    <div class="text-2xl font-bold neon-text-blue mb-4">
+                        <span class="neon-text-purple">WEB</span>FUTURE
+                    </div>
+                    <p class="text-gray-400 mb-4">
+                        Transformando vendedores do Mercado Livre em empreendedores digitais de sucesso.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-blue-400 text-xl"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-purple-400 text-xl"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="text-gray-400 hover:text-cyan-400 text-xl"><i class="fab fa-whatsapp"></i></a>
+                    </div>
+                </div>
+                
+                <!-- Links -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4 neon-text-purple">LINKS</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#beneficios" class="text-gray-400 hover:text-blue-300">Benefícios</a></li>
+                        <li><a href="#migracao" class="text-gray-400 hover:text-purple-300">Processo de Migração</a></li>
+                        <li><a href="#planos" class="text-gray-400 hover:text-cyan-300">Planos</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-blue-300">Portfólio</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Contact -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4 neon-text-blue">CONTATO</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><i class="fas fa-envelope mr-2"></i> contato@webfuture.com.br</li>
+                        <li><i class="fas fa-phone-alt mr-2"></i> (11) 98765-4321</li>
+                        <li><i class="fas fa-map-marker-alt mr-2"></i> São Paulo - SP</li>
+                    </ul>
+                </div>
+                
+                <!-- Newsletter -->
+                <div>
+                    <h3 class="text-lg font-bold mb-4 neon-text-cyan">NEWSLETTER</h3>
+                    <p class="text-gray-400 mb-4">
+                        Receba dicas para migrar do Mercado Livre para seu próprio site.
+                    </p>
+                    <div class="flex">
+                        <input type="email" placeholder="Seu e-mail" class="bg-gray-800 text-white px-4 py-2 rounded-l-lg focus:outline-none focus:ring-2 focus:ring-blue-500 w-full">
+                        <button class="bg-blue-600 text-white px-4 py-2 rounded-r-lg hover:bg-blue-700">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Digital Divider -->
+            <div class="digital-divider my-8"></div>
+            
+            <!-- Copyright -->
+            <div class="text-center text-gray-500 text-sm">
+                <p>&copy; 2023 WebFuture. Todos os direitos reservados.</p>
+                <p class="mt-2">Desenvolvido com <i class="fas fa-heart text-red-400"></i> para vendedores do Mercado Livre</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <div class="fixed bottom-6 right-6 z-50">
+        <a href="#" class="bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-2xl shadow-lg hover:bg-green-600 transition">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script>
+        // Simple animation for demonstration
+        document.querySelectorAll('.neon-button').forEach(button => {
+            button.addEventListener('mouseenter', function() {
+                this.style.boxShadow = `0 0 20px ${this.classList.contains('neon-border-blue') ? 'var(--neon-blue)' : 
+                                      this.classList.contains('neon-border-purple') ? 'var(--neon-purple)' : 'var(--neon-cyan)'}`;
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                this.style.boxShadow = '';
+            });
+        });
+        
+        // Mobile menu toggle (simplified for this example)
+        document.querySelector('.md\\:hidden').addEventListener('click', function() {
+            alert('Menu mobile seria aberto aqui em uma implementação completa');
+        });
+    </script>
+</body>
+</html>
