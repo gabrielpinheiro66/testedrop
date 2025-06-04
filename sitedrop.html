@@ -845,12 +845,31 @@ form.addEventListener('submit', e => {
 
     mobileMenuButton.addEventListener('click', () => {
     console.log("CLICOU")
+    
+    if (mobileMenu.classList.contains('hidden')){
+    
       mobileMenu.classList.remove('hidden');
       setTimeout(() => {
         mobileMenu.classList.add('active');
         mobileMenuButton.classList.add('active');
       }, 10);
       document.body.style.overflow = 'hidden';
+      
+      }
+      
+      else {
+      
+      
+      mobileMenu.classList.remove('active');
+      setTimeout(() => {
+        mobileMenu.classList.add('hidden');
+        mobileMenuButton.classList.remove('active');
+      }, 10);
+      document.body.style.overflow = 'active';
+      
+      
+      
+      }
     });
 
     closeMenu.addEventListener('click', () => {
