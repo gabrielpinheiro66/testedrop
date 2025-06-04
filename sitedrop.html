@@ -844,32 +844,15 @@ form.addEventListener('submit', e => {
     const closeMenu = document.getElementById('close-menu');
 
     mobileMenuButton.addEventListener('click', () => {
-    console.log("CLICOU")
-    
-    if (mobileMenu.classList.contains('hidden')){
     
       mobileMenu.classList.remove('hidden');
       setTimeout(() => {
         mobileMenu.classList.add('active');
         mobileMenuButton.classList.add('active');
+
       }, 10);
       document.body.style.overflow = 'hidden';
       
-      }
-      
-      else {
-      
-      
-      mobileMenu.classList.remove('active');
-      setTimeout(() => {
-        mobileMenu.classList.add('hidden');
-        mobileMenuButton.classList.remove('active');
-      }, 10);
-      document.body.style.overflow = 'active';
-      
-      
-      
-      }
     });
 
     closeMenu.addEventListener('click', () => {
@@ -967,10 +950,13 @@ form.addEventListener('submit', e => {
   const closeMenu = () => {
     mobileMenu.classList.remove('active');
     menuButton.classList.remove('active');
+    document.querySelector('header').classList.remove('hidden');
     // Adiciona a classe 'hidden' após a animação para garantir que não seja acessível
     setTimeout(() => {
        if (!mobileMenu.classList.contains('active')) {
            mobileMenu.classList.add('hidden');
+           
+
        }
     }, 300); // Tempo igual à duração da transição CSS
   };
@@ -982,6 +968,7 @@ form.addEventListener('submit', e => {
     requestAnimationFrame(() => {
         mobileMenu.classList.add('active');
         menuButton.classList.add('active');
+        document.querySelector('header').classList.add('hidden')
     });
   };
 
