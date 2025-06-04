@@ -92,7 +92,20 @@
   </button>
   </div>
 
-  
+
+  <!-- Mobile Menu -->
+  <div id="mobile-menu" class="hidden fixed inset-0 bg-pink-500 bg-opacity-95 z-40 flex flex-col items-center justify-center space-y-8 text-white text-xl">
+    <button id="close-menu" class="absolute top-6 right-6 text-3xl">&times;</button>
+    <a href="#sobre" class="hover:text-yellow-300 transition">Sobre</a>
+    <a href="#decoracao" class="hover:text-yellow-300 transition">Decoração</a>
+    <a href="#buffet" class="hover:text-yellow-300 transition">Buffet</a>
+    <a href="#brinquedos" class="hover:text-yellow-300 transition">Brinquedos</a>
+    <a href="#formulario" class="hover:text-yellow-300 transition">Orçamento</a>
+    <div class="absolute bottom-10 flex space-x-6">
+      <a href="https://wa.me/5522999029259" class="text-3xl"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://instagram.com/planetkidscampos" class="text-3xl"><i class="fab fa-instagram"></i></a>
+    </div>
+  </div>  
   </div>
 
   <!-- Header -->
@@ -831,6 +844,7 @@ form.addEventListener('submit', e => {
     const closeMenu = document.getElementById('close-menu');
 
     mobileMenuButton.addEventListener('click', () => {
+    console.log("CLICOU")
       mobileMenu.classList.remove('hidden');
       setTimeout(() => {
         mobileMenu.classList.add('active');
@@ -874,27 +888,27 @@ form.addEventListener('submit', e => {
     });
 
     // Form Submission
-    const form = document.getElementById('budget-form');
-    const formSuccess = document.createElement('div');
+    const budgetform = document.getElementById('budget-form');
+    const formSuccessDiv = document.createElement('div');
 
-    form.addEventListener('submit', (e) => {
+    budgetform.addEventListener('submit', (e) => {
       e.preventDefault();
             
       // Create success message element
-      formSuccess.id = 'form-success';
-      formSuccess.className = 'bg-pink-500 text-white p-4 rounded-lg mb-6';
-      formSuccess.innerHTML = '<p class="font-bold">✅ Dados enviados com sucesso! Retornaremos em breve via WhatsApp.</p>';
+      formSuccessDiv.id = 'form-success';
+      formSuccessDiv.className = 'bg-pink-500 text-white p-4 rounded-lg mb-6';
+      formSuccessDiv.innerHTML = '<p class="font-bold">✅ Dados enviados com sucesso! Retornaremos em breve via WhatsApp.</p>';
             
       // Insert before submit button
       const submitButton = form.querySelector('button[type="submit"]');
-      form.insertBefore(formSuccess, submitButton);
+      form.insertBefore(formSuccessDiv, submitButton);
             
       // Scroll to success message
-      formSuccess.scrollIntoView({ behavior: 'smooth' });
+      formSuccessDiv.scrollIntoView({ behavior: 'smooth' });
             
       // Submit form data (replace with actual form submission)
       setTimeout(() => {
-        form.submit();
+        budgetform.submit();
       }, 2000);
     });
 
@@ -1000,7 +1014,6 @@ budgetForm.addEventListener('submit', e => {
 
     const formData = new FormData(budgetForm);
 
-   const formData = new FormData(budgetForm);
 
     fetch(scriptURL, { method: 'POST', body: formData })
         .then(response => {
