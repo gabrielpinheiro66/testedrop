@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Planet Kids Campos - Espaço Infantil Completo</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;500;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Poppins', sans-serif;
+    }
+    h1, h2, h3, h4 {
+      font-family: 'Fredoka', sans-serif;
+    }
+    .scroll-smooth {
+      scroll-behavior: smooth;
+    }
+    .floating {
+      animation: floating 3s ease-in-out infinite;
+    }
+    @keyframes floating {
+      0% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+      100% { transform: translateY(0px); }
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #EC4899 0%, #8B5CF6 100%);
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 10px 15px -3px rgba(236, 72, 153, 0.3);
+    }
+    .section-divider {
+    
+      height: 80px;
+      background: linear-gradient(to bottom right, #FCE7F3 0%, #C7D2FE 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 50%, 0 100%);
+    }
+    .feature-icon {
+      width: 60px;
+      height: 60px;
+      background: linear-gradient(135deg, #EC4899 0%, #8B5CF6 100%);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 24px;
+      margin: 0 auto 15px;
+    }
+    .testimonial-card {
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+      transition: all 0.3s ease;
+    }
+    .testimonial-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+    }
+    /* Menu mobile animation */
+    #mobile-menu {
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      transform: translateY(100%);
+      opacity: 0;
+    }
+    #mobile-menu.active {
+      transform: translateY(0);
+       opacity: 1; 
+    }
+    /* Hamburger icon animation */
+    #mobile-menu-button .hamburger {
+      transition: transform 0.3s ease;
+    }
+    #mobile-menu-button.active .hamburger {
+      transform: rotate(90deg);
+    }
+  </style>
+</head>
+<body class="bg-white text-gray-800 scroll-smooth">
+  
+  <!-- Mobile Menu Button (Hidden on larger screens) -->
+  <div class="md:hidden fixed bottom-6 right-6 z-50">
+    <button id="mobile-menu-button" class="md:hidden bg-pink-500 text-white w-12 h-12 rounded-full shadow-lg flex items-center justify-center transition-transform hover:scale-110">
+    <i class="fas fa-bars text-xl hamburger"></i>
+  </button>
+  </div>
+
+  
+  </div>
+
+  <!-- Header -->
+  <header class="sticky top-0 bg-white shadow-md z-50 p-4 flex justify-between items-center px-6 md:px-12 transition-all duration-300">
+    <img src="https://planetkids.site/wp-content/uploads/2025/06/Design_sem_nome__4_-removebg-preview.png" alt="Planet Kids Logo" class="h-14 md:h-16 hover:scale-105 transition-transform">
+    <nav class="hidden md:flex space-x-1">
+      <a href="#sobre" class="px-4 py-2 font-medium hover:text-pink-500 transition">Sobre</a>
+      <a href="#decoracao" class="px-4 py-2 font-medium hover:text-pink-500 transition">Decoração</a>
+      <a href="#buffet" class="px-4 py-2 font-medium hover:text-pink-500 transition">Buffet</a>
+      <a href="#brinquedos" class="px-4 py-2 font-medium hover:text-pink-500 transition">Brinquedos</a>
+      <a href="#formulario" class="bg-pink-500 text-white px-6 py-2 rounded-full font-medium hover:bg-pink-600 transition ml-4">Orçamento</a>
+    </nav>
+    <div class="hidden md:flex items-center space-x-4">
+      <a href="https://wa.me/5522999029259" class="text-pink-500 text-xl hover:text-pink-600 transition"><i class="fab fa-whatsapp"></i></a>
+      <a href="https://instagram.com/planetkidscampos" class="text-pink-500 text-xl hover:text-pink-600 transition"><i class="fab fa-instagram"></i></a>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative overflow-hidden pt-24 pb-20 bg-gradient-to-br from-pink-50 via-purple-50 to-blue-50">
+    <div class="absolute inset-0 opacity-10">
+      <div class="absolute top-20 right-20 w-64 h-64 rounded-full bg-pink-300 filter blur-3xl opacity-50"></div>
+      <div class="absolute bottom-20 left-20 w-64 h-64 rounded-full bg-blue-300 filter blur-3xl opacity-50"></div>
+    </div>
+    <div class="container mx-auto px-6 md:px-12 relative z-10 flex flex-col md:flex-row items-center">
+      <div class="md:w-1/2 text-center md:text-left mb-12 md:mb-0">
+        <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight">
+          Festas <span class="text-pink-500">mágicas</span> para o seu <span class="text-purple-600">pequeno</span>
+        </h1>
+        <p class="text-lg md:text-xl text-gray-600 mb-8 max-w-lg mx-auto md:mx-0">
+          Celebre momentos especiais com segurança, diversão e muita alegria no espaço mais completo de Campos!
+        </p>
+        <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4 justify-center md:justify-start">
+          <a href="#formulario" class="btn-primary text-white px-8 py-4 rounded-full font-bold text-lg inline-block text-center">
+            Solicitar Orçamento
+          </a>
+          <a href="#sobre" class="border-2 border-pink-500 text-pink-500 px-8 py-4 rounded-full font-bold text-lg inline-block text-center hover:bg-pink-500 hover:text-white transition">
+            Conheça o Espaço
+          </a>
+        </div>
+      </div>
+      <div class="md:w-1/2 flex justify-center">
+        <div class="relative floating">
+          <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script> <dotlottie-player src="https://lottie.host/3e4f8456-1b2e-4023-9b3d-ef44809808ad/IPmgGnizIb.lottie" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
+        </div>
+      </div>
+    </div>
+   </section>
+
+  <!-- Features Section -->
+  <section class="py-16 px-6 bg-white">
+    <div class="container mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-16">Por que escolher a <span class="text-pink-500">Planet Kids</span>?</h2>
+            
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-10">
+        <!-- Feature 1 -->
+        <div class="text-center px-6 py-8 rounded-xl transition-all hover:-translate-y-2" style="box-shadow: 0 10px 30px rgba(236, 72, 153, 0.1);">
+          <div class="feature-icon">
+            <i class="fas fa-child"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Monitoras Dedicadas</h3>
+          <p class="text-gray-600">Contamos com 8 monitoras especializadas para cuidar e entreter as crianças durante toda a festa.</p>
+        </div>
+                
+        <!-- Feature 2 -->
+        <div class="text-center px-6 py-8 rounded-xl transition-all hover:-translate-y-2" style="box-shadow: 0 10px 30px rgba(236, 72, 153, 0.1);">
+          <div class="feature-icon">
+            <i class="fas fa-ice-cream"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Buffet Completo</h3>
+          <p class="text-gray-600">Variedade de salgados, doces e bebidas inclusos, com opções adicionais para personalizar.</p>
+        </div>
+                
+        <!-- Feature 3 -->
+        <div class="text-center px-6 py-8 rounded-xl transition-all hover:-translate-y-2" style="box-shadow: 0 10px 30px rgba(236, 72, 153, 0.1);">
+          <div class="feature-icon">
+            <i class="fas fa-gamepad"></i>
+          </div>
+          <h3 class="text-xl font-bold mb-3">Diversão Garantida</h3>
+          <p class="text-gray-600">Mais de 30 brinquedos para todas as idades, incluindo espaços baby, kids e eletrônicos.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="sobre" class="py-16 px-6 bg-gray-50">
+    <div class="container mx-auto">
+      <div class="flex flex-col md:flex-row items-center">
+        <div class="md:w-1/2 mb-10 md:mb-0 md:pr-10">
+          <div class="relative rounded-xl overflow-hidden shadow-xl" style="height: 400px;">
+            <img src="https://planetkids.site/wp-content/uploads/2025/06/IMG_3623.webp" class="w-full h-full object-cover">
+            <img src="https://planetkids.site/wp-content/uploads/2025/06/IMG_4951.webp" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
+          </div>
+        </div>
+        <div class="md:w-1/2 md:pl-10">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">Conheça nosso espaço</h2>
+          <p class="text-gray-600 mb-6">O Planet Kids Campos oferece aos pequenos um ambiente seguro, climatizado e repleto de possibilidades para festas inesquecíveis. E para os pais, toda comodidade e tranquilidade!</p>
+                    
+          <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8">
+            <div class="flex items-start">
+              <i class="fas fa-snowflake text-pink-500 mt-1 mr-3"></i>
+              <div>
+                <h4 class="font-bold">Ambiente Climatizado</h4>
+                <p class="text-sm text-gray-600">Conforto térmico em qualquer época do ano.</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-bolt text-purple-500 mt-1 mr-3"></i>
+              <div>
+                <h4 class="font-bold">Gerador de Energia</h4>
+                <p class="text-sm text-gray-600">Nunca faltará energia na sua festa!</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-music text-pink-500 mt-1 mr-3"></i>
+              <div>
+                <h4 class="font-bold">Música Personalizada</h4>
+                <p class="text-sm text-gray-600">Traga sua playlist preferida via Spotify.</p>
+              </div>
+            </div>
+            <div class="flex items-start">
+              <i class="fas fa-tv text-purple-500 mt-1 mr-3"></i>
+              <div>
+                <h4 class="font-bold">Telão com Datashow</h4>
+                <p class="text-sm text-gray-600">Para exibir fotos e vídeos especiais.</p>
+              </div>
+            </div>
+            <div class="flex justify-center gap-4 flex-wrap">
+    <a href="/temas.html" class="bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-full font-semibold transition">
+      Confira as ùltimas festas no Planet Kids
+    </a>
+    
+        </div>
+          </div>
+                    
+          <div class="bg-pink-50 border-l-4 border-pink-500 p-4 rounded-r">
+            <p class="text-sm font-medium text-pink-800">* Equipe completa de recepcionistas, monitoras e limpeza inclusa em todos os pacotes.</p>
+            <br>
+                    
+          </div>
+        </div>
+      </div>
+    </div>
+        
+  </section>
+  </section>
+
+  <!-- Decoracao Section -->
+  <section id="decoracao" class="py-16 px-6 bg-white">
+    <div class="container mx-auto">
+      <div class="flex flex-col md:flex-row-reverse items-center">
+        <div class="md:w-1/2 mb-10 md:mb-0 md:pl-10">
+          <div class="relative rounded-xl overflow-hidden shadow-xl" style="height: 400px;">
+            <img src="https://planetkids.site/wp-content/uploads/2025/06/unnamed-1.webp" alt="Decoração de festa" class="w-full h-full object-cover">
+            <img src="https://planetkids.site/wp-content/uploads/2025/06/unnamed-2.webp" alt="Decoração de festa" class="w-full h-full object-cover">
+            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent opacity-50"></div>
+          </div>
+        </div>
+        <div class="md:w-1/2 md:pr-10">
+          <h2 class="text-3xl md:text-4xl font-bold mb-6">Decoração <span class="text-pink-500">encantadora</span></h2>
+                    
+          <ul class="space-y-4 mb-6">
+            <li class="flex items-start">
+              <div class="flex-shrink-0 bg-pink-100 rounded-full p-2 mr-4">
+                <i class="fas fa-ruler-combined text-pink-500"></i>
+              </div>
+              <div>
+                <h4 class="font-bold mb-1">9 metros de decoração inclusa</h4>
+                <p class="text-gray-600 text-sm">Base com bolas coloridas, iluminação especial e toalhas decorativas.</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <div class="flex-shrink-0 bg-purple-100 rounded-full p-2 mr-4">
+                <i class="fas fa-plus text-purple-500"></i>
+              </div>
+              <div>
+                <h4 class="font-bold mb-1">Extras disponíveis</h4>
+                <p class="text-gray-600 text-sm">Tendas, bolas desconstruídas, neon e metalizadas para quem quer algo ainda mais especial.</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <div class="flex-shrink-0 bg-blue-100 rounded-full p-2 mr-4">
+                <i class="fas fa-palette text-blue-500"></i>
+              </div>
+              <div>
+                <h4 class="font-bold mb-1">Personalização total</h4>
+                <p class="text-gray-600 text-sm">Adaptamos o tema da decoração conforme a preferência da criança.</p>
+                <div class="flex justify-center gap-4 flex-wrap">
+                    <br>
+    <a href="/temas.html" class="bg-pink-500 hover:bg-pink-600 text-white px-6 py-3 rounded-full font-semibold transition">
+      Veja Nossos Temas Disponíveis
+    </a>
+    
+        </div>
+              </div>
+                            
+            </li>
+          </ul>
+                    
+          <div class="bg-blue-50 border-l-4 border-blue-500 p-4 rounded-r">
+            <p class="text-sm font-medium text-blue-800">Traga suas ideias e nós transformamos em realidade!</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Food Section -->
+  <section id="buffet" class="py-16 px-6 bg-gray-50">
+    <div class="container mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Delícias do nosso <span class="text-pink-500">buffet</span></h2>
+            
+      <div class="grid md:grid-cols-2 gap-8 max-w-5xl mx-auto">
+        <!-- Included Items -->
+        <div class="bg-white p-8 rounded-xl shadow-lg">
+          <div class="flex items-center mb-6">
+            <div class="bg-pink-500 text-white p-3 rounded-full mr-4">
+              <i class="fas fa-check"></i>
+            </div>
+            <h3 class="text-xl font-bold">Itens Inclusos</h3>
+          </div>
+                    
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <i class="fas fa-utensils text-pink-500 mt-1 mr-3"></i>
+              <div>
+                <h4 class="font-medium">Salgados Variados</h4>
+                <p class="text-sm text-gray-600">Coxinhas, risoles, enroladinhos, empadas e mais.</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-hamburger text-purple-500 mt-1 mr-3"></i>
+              <div>
+                <h4 class="font-medium">Mini Lanches</h4>
+                <p class="text-sm text-gray-600">Mini pizza, hambúrguer, cachorro quente e nuggets.</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-candy-cane text-pink-500 mt-1 mr-3"></i>
+              <div>
+                <h4 class="font-medium">Docinhos</h4>
+                <p class="text-sm text-gray-600">Mini churros, pastéis doces e brigadeiros.</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-glass-whiskey text-blue-500 mt-1 mr-3"></i>
+              <div>
+                <h4 class="font-medium">Bebidas</h4>
+                <p class="text-sm text-gray-600">Suco, refrigerantes (Coca, Guaraná) e água.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+                
+        <!-- Extras -->
+        <div class="bg-white p-8 rounded-xl shadow-lg">
+          <div class="flex items-center mb-6">
+            <div class="bg-purple-500 text-white p-3 rounded-full mr-4">
+              <i class="fas fa-plus"></i>
+            </div>
+            <h3 class="text-xl font-bold">Extras Disponíveis</h3>
+          </div>
+                    
+          <ul class="space-y-4">
+            <li class="flex items-start">
+              <i class="fas fa-birthday-cake text-purple-500 mt-1 mr-3"></i>
+              <div>
+                <h4 class="font-medium">Bolo Personalizado</h4>
+                <p class="text-sm text-gray-600">Sob consulta com nossa confeiteira parceira.</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-drumstick-bite text-pink-500 mt-1 mr-3"></i>
+              <div>
+                <h4 class="font-medium">Espetinhos</h4>
+                <p class="text-sm text-gray-600">Carne e frango para os convidados adultos.</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-ice-cream text-purple-500 mt-1 mr-3"></i>
+              <div>
+                <h4 class="font-medium">Crepe</h4>
+                <p class="text-sm text-gray-600">Pacotes de 100 a 300 unidades disponíveis.</p>
+              </div>
+            </li>
+            <li class="flex items-start">
+              <i class="fas fa-bacon text-blue-500 mt-1 mr-3"></i>
+              <div>
+                <h4 class="font-medium">Tapiocarias</h4>
+                <p class="text-sm text-gray-600">Opções salgadas para complementar.</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+            
+      <div class="max-w-3xl mx-auto mt-12 bg-pink-50 border border-pink-200 rounded-xl p-6 text-center">
+        <p class="font-medium text-pink-800">* Adaptamos o cardápio conforme suas preferências e restrições alimentares.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Toys Section -->
+  <section id="brinquedos" class="py-16 px-6 bg-white">
+    <div class="container mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-6">Mundo de <span class="text-pink-500">diversão</span></h2>
+      <p class="text-xl text-center text-gray-600 max-w-3xl mx-auto mb-12">Brinquedos para todas as idades que garantem horas de alegria e entretenimento!</p>
+            
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <!-- Baby Area -->
+        <div class="bg-gradient-to-br from-pink-50 to-purple-50 rounded-xl p-8">
+          <div class="flex items-center justify-center mb-6">
+           <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script> 
+ <dotlottie-player src="https://lottie.host/306b7cb8-f2c2-4234-a5d8-1e267d46a0c0/dv6IvvYpMb.lottie" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
+          </div>
+          <h3 class="text-xl font-bold text-center mb-4">Área Baby</h3>
+          <ul class="space-y-3 text-center">
+            <li class="flex items-center justify-center">
+              <i class="fas fa-check-circle text-pink-500 mr-2"></i>
+              Piscina de bolinhas
+            </li>
+            <li class="flex items-center justify-center">
+              <i class="fas fa-check-circle text-pink-500 mr-2"></i>
+              Cavalinhos
+            </li>
+            <li class="flex items-center justify-center">
+              <i class="fas fa-check-circle text-pink-500 mr-2"></i>
+              Mesinha para desenho
+            </li>
+            <li class="flex items-center justify-center">
+              <i class="fas fa-check-circle text-pink-500 mr-2"></i>
+              Brinquedos pedagógicos
+            </li>
+          </ul>
+        </div>
+                
+        <!-- Kids Area -->
+        <div class="bg-gradient-to-br from-blue-50 to-purple-50 rounded-xl p-8">
+          <div class="flex items-center justify-center mb-6">
+             <dotlottie-player src="https://lottie.host/c5e5a919-77ff-4ce9-9015-c9b3e5af6251/0NxmczgrSo.lottie" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
+          </div>
+          <h3 class="text-xl font-bold text-center mb-4">Área Kids</h3>
+          <ul class="space-y-3 text-center">
+            <li class="flex items-center justify-center">
+              <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+              Tobogã e cama elástica
+            </li>
+            <li class="flex items-center justify-center">
+              <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+              Carrossel e pula corda
+            </li>
+            <li class="flex items-center justify-center">
+              <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+              Xícara giratória
+            </li>
+            <li class="flex items-center justify-center">
+              <i class="fas fa-check-circle text-blue-500 mr-2"></i>
+              Tombo legal e taco
+            </li>
+          </ul>
+        </div>
+                
+        <!-- Eletrônicos -->
+        <div class="bg-gradient-to-br from-purple-50 to-pink-50 rounded-xl p-8">
+          <div class="flex items-center justify-center mb-6">
+            <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script> 
+ <dotlottie-player src="https://lottie.host/508a48ff-d421-41cc-a6b3-e2fc1e5e778d/M7TThjikON.lottie" background="transparent" speed="1" style="width: 300px; height: 300px" loop autoplay></dotlottie-player>
+          </div>
+          <h3 class="text-xl font-bold text-center mb-4">Eletrônicos</h3>
+          <ul class="space-y-3 text-center">
+            <li class="flex items-center justify-center">
+              <i class="fas fa-check-circle text-purple-500 mr-2"></i>
+              5 videogames completos
+            </li>
+            <li class="flex items-center justify-center">
+              <i class="fas fa-check-circle text-purple-500 mr-2"></i>
+              2 kinects e fliperama
+            </li>
+            <li class="flex items-center justify-center">
+              <i class="fas fa-check-circle text-purple-500 mr-2"></i>
+              Totó e campinho
+            </li>
+            <li class="flex items-center justify-center">
+              <i class="fas fa-check-circle text-purple-500 mr-2"></i>
+              Carrinho de videogame
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-16 px-6 bg-gray-50">
+    <div class="container mx-auto">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">O que dizem os <span class="text-pink-500">pais</span></h2>
+            
+      <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+        <!-- Testimonial 1 -->
+        <div class="testimonial-card p-8">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-full bg-pink-100 flex items-center justify-center text-pink-500 font-bold mr-4">MF</div>
+            <div>
+              <h4 class="font-bold">Maria Fernanda</h4>
+              <div class="flex text-yellow-400 text-sm">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600">"A festa da minha filha foi perfeita! As monitoras cuidaram tão bem das crianças que pudemos relaxar e aproveitar. Super recomendo!"</p>
+        </div>
+                
+        <!-- Testimonial 2 -->
+        <div class="testimonial-card p-8">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-full bg-blue-100 flex items-center justify-center text-blue-500 font-bold mr-4">CR</div>
+            <div>
+              <h4 class="font-bold">Carlos Roberto</h4>
+              <div class="flex text-yellow-400 text-sm">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600">"Espaço limpo e organizado, buffet delicioso e muitas opções de brinquedos. Meu filho não queria ir embora! Sem dúvida faremos a próxima festa lá."</p>
+        </div>
+                
+        <!-- Testimonial 3 -->
+        <div class="testimonial-card p-8">
+          <div class="flex items-center mb-4">
+            <div class="w-12 h-12 rounded-full bg-purple-100 flex items-center justify-center text-purple-500 font-bold mr-4">AP</div>
+            <div>
+              <h4 class="font-bold">Ana Paula</h4>
+              <div class="flex text-yellow-400 text-sm">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+              </div>
+            </div>
+          </div>
+          <p class="text-gray-600">"Amei a decoração e a preocupação com segurança. Crianças adoraram e os adultos também! Atendimento personalizado do início ao fim."</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Form Section -->
+  <section id="formulario" class="py-16 px-6 bg-gradient-to-br from-pink-50 to-purple-50">
+    <div class="container mx-auto max-w-4xl">
+      <div class="bg-white rounded-xl shadow-2xl overflow-hidden">
+        <div class="md:flex">
+          <div class="md:w-1/2 bg-pink-500 text-white p-10 hidden md:block">
+            <h2 class="text-3xl font-bold mb-6">Solicite seu orçamento</h2>
+            <p class="mb-6">Preencha o formulário ao lado e entraremos em contato avec toutes les informations et valeurs.</p>
+            <div class="flex items-center">
+              <i class="fas fa-phone-alt text-xl mr-4"></i>
+              <div>
+                <p class="font-medium">WhatsApp</p>
+                <p class="text-xl">(22) 99902-9259</p>
+              </div>
+            </div>
+            <div class="flex items-center mt-6">
+              <i class="fas fa-envelope text-xl mr-4"></i>
+              <div>
+                <p class="font-medium">E-mail</p>
+                <p class="text-xl">contato@planetkids.site</p>
+              </div>
+            </div>
+            <div class="flex items-center mt-6">
+              <i class="fas fa-map-marker-alt text-xl mr-4"></i>
+              <div>
+                <p class="font-medium">Endereço</p>
+                <p class="text-xl">Av. Alberto Lamego, 761</p>
+                <p class="text-sm">Horto, Campos dos Goytacazes - RJ</p>
+              </div>
+            </div>
+          </div>
+                    
+          <div class="md:w-1/2 p-8 md:p-10">
+            <h2 class="text-3xl font-bold mb-6 text-pink-500 md:hidden">Solicite seu orçamento</h2>
+            <div class="space-y-4">
+              <div>
+               <form 
+            id="budget-form" 
+            action="https://script.google.com/macros/s/AKfycbyDjrfXyiGcY8c6BU0r9Y3BRloSeWBEqe3YyOCouvqMYiJdqUJXrPqyxdcOPE6Q1Y13/exec" 
+            method="POST"
+            class="max-w-2xl mx-auto bg-[#F5F5F5] p-6 md:p-8 rounded-xl shadow-lg">
+
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div>
+                    <label class="block mb-2 font-medium text-gray-700">Nome Completo *</label>
+                    <input name="Nome" type="text" required class="form-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#71C538]">
+                </div>
+                <div>
+                    <label class="block mb-2 font-medium text-gray-700">WhatsApp *</label>
+                    <input name="Whatsapp" type="tel" required placeholder="(00) 00000-0000" class="form-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#71C538]">
+                </div>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-6 mb-6">
+                <div>
+                    <label class="block mb-2 font-medium text-gray-700">Data de Nascimento *</label>
+                    <input name="Nascimento" type="date" required class="form-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#71C538]">
+                </div>
+                <div>
+                    <label class="block mb-2 font-medium text-gray-700">Idade *</label>
+                    <input name="Idade" type="number" min="1" max="12" required class="form-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#71C538]">
+                </div>
+            </div>
+
+            <div class="mb-6">
+                <label class="block mb-2 font-medium text-gray-700">Número de convidados *</label>
+                <select name="Convidados" required class="form-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#71C538]">
+                    <option value="" disabled selected>Selecione</option>
+                    <option value="Até 30">Até 30</option>
+                    <option value="30-50">30-50</option>
+                    <option value="50-70">50-70</option>
+                    <option value="70-100">70-100</option>
+                    <option value="100+">Mais de 100</option>
+                </select>
+            </div>
+
+            <div class="mb-6">
+                <label class="block mb-2 font-medium text-gray-700">Tema da Festa *</label>
+                <input name="Tema" type="text" placeholder="Ex.: Super Heróis, Princesas..." required class="form-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#71C538]">
+            </div>
+
+            <div class="mb-6">
+                <label class="block mb-2 font-medium text-gray-700">O que é mais importante para você?</label>
+                <input name="Prioridade" type="text" placeholder="Buffet, Decoração, Atendimento, Brinquedos..." class="form-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#71C538]">
+            </div>
+
+            <div class="mb-6">
+                <label class="block mb-2 font-medium text-gray-700">Observações adicionais</label>
+                <textarea name="Observacoes" rows="3" placeholder="Algo que queira adicionar..." class="form-input w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-[#71C538]"></textarea>
+            </div>
+
+            <div id="form-success" class="hidden bg-[#71C538] text-white p-4 rounded-lg mb-6">
+                <p class="font-bold">✅ Dados enviados com sucesso! Retornaremos em breve via WhatsApp.</p>
+            </div>
+
+            <button type="submit" class="w-full btn-primary px-8 py-4 rounded-full font-bold text-lg">
+                Solicitar Orçamento
+            </button>
+        </form>
+    </div>
+</section>
+
+<script>
+const form = document.getElementById('budget-form');
+const successMessage = document.getElementById('form-success');
+
+form.addEventListener('submit', e => {
+  e.preventDefault();
+  const data = new FormData(form);
+
+  fetch(form.action, { method: 'POST', body: data })
+    .then(response => {
+      if (response.ok) {
+        successMessage.classList.remove('hidden');
+        form.reset();
+        setTimeout(() => successMessage.classList.add('hidden'), 5000);
+      } else {
+        alert('❌ Erro no envio. Tente novamente.');
+      }
+    })
+    .catch(() => {
+      alert('❌ Erro no envio. Verifique sua conexão.');
+    });
+});
+</script>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ Section -->
+  <section class="py-16 px-6 bg-white">
+    <div class="container mx-auto max-w-4xl">
+      <h2 class="text-3xl md:text-4xl font-bold text-center mb-12">Perguntas <span class="text-pink-500">frequentes</span></h2>
+            
+      <div class="space-y-4">
+        <!-- FAQ Item 1 -->
+        <div class="border border-gray-200 rounded-xl overflow-hidden">
+          <button class="faq-toggle w-full text-left p-6 font-medium flex justify-between items-center bg-gray-50">
+            Qual o horário de funcionamento?
+            <i class="fas fa-chevron-down transition-transform"></i>
+          </button>
+          <div class="faq-content hidden p-6 text-gray-600">
+            Estamos abertos de segunda a domingo, das 9h às 19h para agendamento de visitas e orçamentos. As festas podem ser agendadas para horários a partir das 11h (almoço), 15h (tarde) ou 19h (noite).
+          </div>
+        </div>
+                
+        <!-- FAQ Item 2 -->
+        <div class="border border-gray-200 rounded-xl Overflow-hidden">
+          <button class="faq-toggle w-full text-left p-6 font-medium flex justify-between items-center bg-gray-50">
+            Qual o tempo mínimo para reservar uma festa?
+            <i class="fas fa-chevron-down transition-transform"></i>
+          </button>
+          <div class="faq-content hidden p-6 text-gray-600">
+            Recomendamos reservar com pelo menos 30 dias de antecedência, principalmente para fins de semana que costumam ficar lotados rapidamente. Em último caso, podemos avaliar disponibilidades com menos tempo, mas sujeito à confirmação.
+          </div>
+        </div>
+                
+        <!-- FAQ Item 3 -->
+        <div class="border border-gray-200 rounded-xl overflow-hidden">
+          <button class="faq-toggle w-full text-left p-6 font-medium flex justify-between items-center bg-gray-50">
+            É permitido entrada de alimentos de fora?
+            <i class="fas fa-chevron-down transition-transform"></i>
+          </button>
+          <div class="faq-content hidden p-6 text-gray-600">
+            Permitimos apenas o bolo (caso seja de fora) e docinhos especiais para o aniversariante, desde que comunicados previamente. Os demais alimentos devem ser adquiridos conosco para garantir a qualidade e segurança dos produtos.
+          </div>
+        </div>
+                
+        <!-- FAQ Item 4 -->
+        <div class="border border-gray-200 rounded-xl overflow-hidden">
+          <button class="faq-toggle w-full text-left p-6 font-medium flex justify-between items-center bg-gray-50">
+            Como funciona o pagamento?
+            <i class="fas fa-chevron-down transition-transform"></i>
+          </button>
+          <div class="faq-content hidden p-6 text-gray-600">
+            O pagamento pode ser realizado em até 3x sem juros nos cartões Visa e Mastercard (parcelamento sujeito à análise). Aceitamos também transferência bancária e PIX com desconto à vista.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Call to Action -->
+  <section class="py-16 px-6 bg-gradient-to-br from-pink-500 to-purple-600 text-white">
+    <div class="container mx-auto text-center">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6">Pronto para celebrar conosco?</h2>
+      <p class="text-xl mb-8 max-w-2xl mx-auto">Entre em contato agora mesmo e reserve a date para a festa mais incrível do seu pequeno!</p>
+      <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+        <a href="#formulario" class="bg-white text-pink-600 px-8 py-4 rounded-full font-bold text-lg inline-block hover:bg-gray-100 transition">
+          Solicitar Orçamento
+        </a>
+        <a href="https://wa.me/5522999029259" class="border-2 border-white text-white px-8 py-4 rounded-full font-bold text-lg inline-block hover:bg-white hover:text-pink-600 transition">
+          Falar no WhatsApp
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-900 text-gray-400 py-12">
+    <div class="container mx-auto px-6">
+      <div class="grid md:grid-cols-4 gap-8">
+        <!-- Col 1 -->
+        <div>
+          <img src="https://planetkids.site/wp-content/uploads/2025/06/Design_sem_nome__4_-removebg-preview.png" alt="Planet Kids Logo" class="h-16 mb-4">
+          <p class="mb-4">O espaço infantil mais completo de Campos dos Goytacazes, proporcionando festas inesquecíveis com segurança e diversão.</p>
+          <div class="flex space-x-4">
+            <a href="https://facebook.com" class="text-xl hover:text-pink-500 transition"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://instagram.com/planetkidscampos" class="text-xl hover:text-pink-500 transition"><i class="fab fa-instagram"></i></a>
+            <a href="https://wa.me/5522999029259" class="text-xl hover:text-pink-500 transition"><i class="fab fa-whatsapp"></i></a>
+          </div>
+        </div>
+                
+        <!-- Col 2 -->
+        <div>
+          <h4 class="text-white text-lg font-bold mb-4">Links Rápidos</h4>
+          <ul class="space-y-2">
+            <li><a href="#sobre" class="hover:text-pink-500 transition">Sobre Nós</a></li>
+            <li><a href="#decoracao" class="hover:text-pink-500 transition">Decoração</a></li>
+            <li><a href="#buffet" class="hover:text-pink-500 transition">Buffet</a></li>
+            <li><a href="#brinquedos" class="hover:text-pink-500 transition">Brinquedos</a></li>
+            <li><a href="#formulario" class="hover:text-pink-500 transition">Orçamento</a></li>
+          </ul>
+        </div>
+                
+        <!-- Col 3 -->
+        <div>
+          <h4 class="text-white text-lg font-bold mb-4">Horário de Funcionamento</h4>
+          <ul class="space-y-2">
+            <li class="flex justify-between">
+              <span>Segunda-Sexta</span>
+              <span>9h-19h</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Sábado</span>
+              <span>9h-19h</span>
+            </li>
+            <li class="flex justify-between">
+              <span>Domingo</span>
+              <span>9h-14h</span>
+            </li>
+            <li class="pt-2 text-sm">* Festas em horários especiais</li>
+          </ul>
+        </div>
+                
+        <!-- Col 4 -->
+        <div>
+          <h4 class="text-white text-lg font-bold mb-4">Contato</h4>
+          <address class="not-italic">
+            <p class="mb-3 flex items-start">
+              <i class="fas fa-map-marker-alt mt-1 mr-3 text-pink-500"></i>
+              <span>Av. Alberto Lamego, 761<br>Horto, Campos dos Goytacazes - RJ</span>
+            </p>
+            <p class="mb-3 flex items-center">
+              <i class="fas fa-phone-alt mr-3 text-pink-500"></i>
+              <span>(22) 99902-9259</span>
+            </p>
+            <p class="flex items-center">
+              <i class="fas fa-envelope mr-3 text-pink-500"></i>
+              <span>contato@planetkids.site</span>
+            </p>
+          </address>
+        </div>
+      </div>
+            
+      <div class="border-t border-gray-800 mt-12 pt-8 text-center">
+        <p>&copy; 2023 Planet Kids Campos. Todos os direitos reservados.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // Improved Mobile Menu Toggle with animations
+    const mobileMenuButton = document.getElementById('mobile-menu-button');
+    const mobileMenu = document.getElementById('mobile-menu');
+    const closeMenu = document.getElementById('close-menu');
+
+    mobileMenuButton.addEventListener('click', () => {
+      mobileMenu.classList.remove('hidden');
+      setTimeout(() => {
+        mobileMenu.classList.add('active');
+        mobileMenuButton.classList.add('active');
+      }, 10);
+      document.body.style.overflow = 'hidden';
+    });
+
+    closeMenu.addEventListener('click', () => {
+      mobileMenu.classList.remove('active');
+      mobileMenuButton.classList.remove('active');
+      setTimeout(() => {
+        mobileMenu.classList.add('hidden');
+      }, 300);
+      document.body.style.overflow = '';
+    });
+
+    // Close menu when clicking on a link
+    document.querySelectorAll('#mobile-menu a').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileMenu.classList.remove('active');
+        mobileMenuButton.classList.remove('active');
+        setTimeout(() => {
+          mobileMenu.classList.add('hidden');
+        }, 300);
+        document.body.style.overflow = '';
+      });
+    });
+
+    // FAQ Toggle
+    const faqToggles = document.querySelectorAll('.faq-toggle');
+
+    faqToggles.forEach(toggle => {
+      toggle.addEventListener('click', () => {
+        const content = toggle.nextElementSibling;
+        const icon = toggle.querySelector('i');
+                
+        content.classList.toggle('hidden');
+        icon.classList.toggle('rotate-180');
+      });
+    });
+
+    // Form Submission
+    const form = document.getElementById('budget-form');
+    const formSuccess = document.createElement('div');
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+            
+      // Create success message element
+      formSuccess.id = 'form-success';
+      formSuccess.className = 'bg-pink-500 text-white p-4 rounded-lg mb-6';
+      formSuccess.innerHTML = '<p class="font-bold">✅ Dados enviados com sucesso! Retornaremos em breve via WhatsApp.</p>';
+            
+      // Insert before submit button
+      const submitButton = form.querySelector('button[type="submit"]');
+      form.insertBefore(formSuccess, submitButton);
+            
+      // Scroll to success message
+      formSuccess.scrollIntoView({ behavior: 'smooth' });
+            
+      // Submit form data (replace with actual form submission)
+      setTimeout(() => {
+        form.submit();
+      }, 2000);
+    });
+
+    // Smooth scrolling for all links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function(e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Animate header on scroll
+    const header = document.querySelector('header');
+    window.addEventListener('scroll', () => {
+      if (window.scrollY > 50) {
+        header.classList.add('shadow-lg');
+        header.classList.add('backdrop-blur-sm');
+        header.classList.add('bg-white');
+        header.classList.remove('shadow-md');
+      } else {
+        header.classList.remove('shadow-lg');
+        header.classList.remove('backdrop-blur-sm');
+        header.classList.remove('bg-white');
+        header.classList.add('shadow-md');
+      }
+    });
+    document.addEventListener('DOMContentLoaded', () => {
+  const menuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  const closeButton = document.getElementById('close-menu');
+  const menuLinks = mobileMenu.querySelectorAll('a');
+
+  // Função para fechar o menu
+  const closeMenu = () => {
+    mobileMenu.classList.remove('active');
+    menuButton.classList.remove('active');
+    // Adiciona a classe 'hidden' após a animação para garantir que não seja acessível
+    setTimeout(() => {
+       if (!mobileMenu.classList.contains('active')) {
+           mobileMenu.classList.add('hidden');
+       }
+    }, 300); // Tempo igual à duração da transição CSS
+  };
+
+  // Função para abrir o menu
+  const openMenu = () => {
+    mobileMenu.classList.remove('hidden'); // Remove 'hidden' antes de ativar para permitir animação
+    // Pequeno delay para garantir que 'hidden' foi removido antes de adicionar 'active'
+    requestAnimationFrame(() => {
+        mobileMenu.classList.add('active');
+        menuButton.classList.add('active');
+    });
+  };
+
+  // Event listener para o botão hamburguer
+  menuButton.addEventListener('click', (e) => {
+    e.stopPropagation(); // Impede que o clique se propague para o document
+    if (mobileMenu.classList.contains('active')) {
+      closeMenu();
+    } else {
+      openMenu();
+    }
+  });
+
+  // Event listener para o botão de fechar
+  closeButton.addEventListener('click', (e) => {
+    e.stopPropagation();
+    closeMenu();
+  });
+
+  // Event listener para os links do menu
+  menuLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      // Não precisa de stopPropagation aqui, pois queremos que a navegação ocorra
+      closeMenu();
+    });
+  });
+
+  // Event listener para fechar o menu clicando fora dele
+  document.addEventListener('click', (e) => {
+    // Verifica se o clique foi fora do menu e fora do botão que o abre
+    if (mobileMenu.classList.contains('active') && !mobileMenu.contains(e.target) && !menuButton.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  // Inicialmente, garantir que o menu esteja escondido corretamente
+  if (!mobileMenu.classList.contains('active')) {
+      mobileMenu.classList.add('hidden');
+  }
+});
+
+// Form submission integrado com Google Sheets
+const scriptURL = 'https://script.google.com/macros/s/AKfycbw-DHDaUMvWmsFUosWj1pOL7p2JiOO9d474exaOoMNs7EpjaltR_u5Y96yV3xkSqNhX/exec';
+const budgetForm = document.getElementById('budget-form');
+const formSuccess = document.getElementById('form-success');
+
+budgetForm.addEventListener('submit', e => {
+    e.preventDefault();
+
+    const formData = new FormData(budgetForm);
+
+   const formData = new FormData(budgetForm);
+
+    fetch(scriptURL, { method: 'POST', body: formData })
+        .then(response => {
+            console.log('Sucesso!', response);
+            alert('✅ Formulário enviado com sucesso! Retornaremos via WhatsApp.');
+
+            setTimeout(() => {
+                budgetForm.reset();
+                formSuccess.classList.add('hidden');
+            }, 5000);
+        })
+        .catch(error => {
+            console.error('Erro!', error.message);
+            alert('❌ Ocorreu um erro no envio. Tente novamente.');
+        });
+});
+
+  </script>
+</body>
+</html>
